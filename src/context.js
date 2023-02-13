@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import placeholder from "./images/placeholder.png";
-const url = "http://www.omdbapi.com/?apikey=de486c45&s=";
+const url = "https://www.omdbapi.com/?apikey=de486c45&s=";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
