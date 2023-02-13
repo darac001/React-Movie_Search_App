@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function Movie(props) {
     <Link to={`/movie/${id}`} className="movie-link">
     <article className="home-movie">
       <div className="img-container">
-        <img src={image} />
+        <img src={image} alt="movie" />
       </div>
       <div className="home-movie-footer">
         <h2>{title}</h2>

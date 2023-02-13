@@ -33,7 +33,7 @@ const SingleMovie = () => {
             Genre,
             Plot,
             Year,
-            Writer,
+            
             Title,
             Poster,
             Rated,
@@ -47,7 +47,7 @@ const SingleMovie = () => {
             genre: Genre,
             plot: Plot,
             released: Year,
-            write: Writer,
+            
             title: Title,
             image: Poster,
             rated: Rated,
@@ -82,7 +82,7 @@ const SingleMovie = () => {
       genre,
       plot,
       released,
-      writer,
+      
       title,
       image,
       rated,
