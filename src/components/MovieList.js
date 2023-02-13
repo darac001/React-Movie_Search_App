@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import Movie from "./Movie";
 import Loading from "./Loading";
 import { AppContext } from "../context";

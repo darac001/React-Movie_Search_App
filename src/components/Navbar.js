@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="nav-center">
         <div className="logo-container">
           <Link to="/">
-            <img src={logo} className="logo"></img>
+            <img src={logo} alt="logo" className="logo"></img>
           </Link>
           <p>powered by OMDb API</p>
         </div>

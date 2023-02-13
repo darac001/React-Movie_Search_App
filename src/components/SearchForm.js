@@ -1,9 +1,9 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import { AppContext } from "../context";
-import Loading from "./Loading";
+
 
 const SearchForm = () => {
-  const { searchTerm, setSearchTerm, expand, isExpandSearch, loading } =
+  const { searchTerm, setSearchTerm, expand, isExpandSearch } =
     useContext(AppContext);
   
 

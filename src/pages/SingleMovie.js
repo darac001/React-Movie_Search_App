@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../components/Loading";
-import { useParams, Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { useParams} from "react-router-dom";
+
 import Card from "react-bootstrap/Card";
 import Table from "react-bootstrap/Table";
 import { FaImdb } from "react-icons/fa";
@@ -11,59 +11,60 @@ const url = "http://www.omdbapi.com/?apikey=de486c45&i=";
 
 const SingleMovie = () => {
   const { id } = useParams();
-  const [imdbId, setImdbId] = useState("");
+  
   const [loading, setLoading] = useState(false);
   const [movie, setMovie] = useState(null);
   const [awrd, setAwrd] = useState(true);
-  const getMovie = async () => {
-    setLoading(true);
-    setAwrd(false);
-    try {
-      const response = await fetch(`${url}${id}`);
-      const data = await response.json();
-      console.log(data);
-      if (data) {
-        const {
-          imdbID,
-          Actors,
-          Awards,
-          Director,
-          Genre,
-          Plot,
-          Year,
-          Writer,
-          Title,
-          Poster,
-          Rated,
-          Runtime,
-        } = data;
-        const newMovie = {
-          imdb: imdbID,
-          actors: Actors,
-          awards: Awards,
-          director: Director,
-          genre: Genre,
-          plot: Plot,
-          released: Year,
-          write: Writer,
-          title: Title,
-          image: Poster,
-          rated: Rated,
-          runtime: Runtime,
-        };
-        console.log(newMovie);
-        setMovie(newMovie);
-        setLoading(false);
-        if (Awards) {
-          setAwrd(true);
-        }
-      }
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+  
   useEffect(() => {
+    const getMovie = async () => {
+      setLoading(true);
+      setAwrd(false);
+      try {
+        const response = await fetch(`${url}${id}`);
+        const data = await response.json();
+        console.log(data);
+        if (data) {
+          const {
+            imdbID,
+            Actors,
+            Awards,
+            Director,
+            Genre,
+            Plot,
+            Year,
+            Writer,
+            Title,
+            Poster,
+            Rated,
+            Runtime,
+          } = data;
+          const newMovie = {
+            imdb: imdbID,
+            actors: Actors,
+            awards: Awards,
+            director: Director,
+            genre: Genre,
+            plot: Plot,
+            released: Year,
+            write: Writer,
+            title: Title,
+            image: Poster,
+            rated: Rated,
+            runtime: Runtime,
+          };
+          console.log(newMovie);
+          setMovie(newMovie);
+          setLoading(false);
+          if (Awards) {
+            setAwrd(true);
+          }
+        }
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
     getMovie();
   }, [id]);
 
