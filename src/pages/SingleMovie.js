@@ -7,7 +7,7 @@ import Table from "react-bootstrap/Table";
 import { FaImdb } from "react-icons/fa";
 import { BsDot } from "react-icons/bs";
 
-const url = "http://www.omdbapi.com/?apikey=de486c45&i=";
+const url = "https://www.omdbapi.com/?apikey=de486c45&i=";
 
 const SingleMovie = () => {
   const { id } = useParams();
